@@ -1,0 +1,21 @@
+.profile__button {
+  background: none;
+  box-shadow: none;
+  color: #FFF;
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  align-self: center;
+}
+
+.profile__button:hover {
+  opacity: 0.6; 
+}
+
+@media only screen and (max-width: 580px) {
+  .profile__button {
+      align-self: initial ;
+  }
+}

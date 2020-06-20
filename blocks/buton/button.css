@@ -1,0 +1,8 @@
+.button {
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    padding: 0px;
+    cursor: pointer;
+    outline: none;
+}
