@@ -15,12 +15,12 @@
 }
 
 @media only screen and (max-width: 834px) {
-  .profile__add-button {
+  .profile__add-button  {
   flex-grow: 1;
   margin-top: 36px;
   }
 }
 
-.profile__add-button:hover {
+.profile__add-button :hover {
   opacity: 0.6; 
 }
