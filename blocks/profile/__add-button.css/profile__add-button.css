@@ -14,7 +14,7 @@
   border-radius: 2px;
 }
 
-@media only screen and (max-width: 834px) {
+@media only screen and (max-width: 882px) {
   .profile__add-button  {
   flex-grow: 1;
   margin-top: 36px;
