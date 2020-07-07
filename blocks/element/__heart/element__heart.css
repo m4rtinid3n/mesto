@@ -1,3 +1,5 @@
+@import url(./_active/element__heart_active.css);
+
 .element__heart {
     margin-right: 22px;
     width: 20px;
