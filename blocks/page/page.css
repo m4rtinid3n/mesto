@@ -16,7 +16,7 @@
     }
 }
 
-@media only screen and (max-width: 580px) {
+@media only screen and (max-width: 370px) {
     .page {
         padding: 28px 0px 36px 0px;
         }
