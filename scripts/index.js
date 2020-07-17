@@ -21,6 +21,14 @@ const formElements = popupElement.querySelector('.popup-elements');
 const nameElement = popupElement.querySelector('.popup__input_type_name-element');
 const linkElement = popupElement.querySelector('.popup__input_type_src');
 
+const config = {
+    formSelector: '.popup__content',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__save',
+    inactiveButtonClass: 'popup__save_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__input-error_visible'
+}
 
 function getCardElement(item) {
     const card = cardsTemplate.content.cloneNode(true);
@@ -46,6 +54,14 @@ initialCards.forEach(function (item) {
     renderCard(card, cardsList);
   });
 
+const resetErrorForm = (popup, config) => {
+    const formElement = popup.querySelector(config.formSelector);
+    const inputSelector = popup.querySelectorAll(config.inputSelector);
+    inputSelector.forEach((inputErrorClass) => {
+        hideInputError(config, formElement, inputErrorClass);
+    });
+};
+
 function deleteCard(e) {
     const card = e.target.closest('.element');
     card.remove();
@@ -61,14 +77,47 @@ function openPopupCards(evt) {
     popupDescription.textContent = card.alt;
     popupOpened(popupImage);
 }
-  
+
+function ClosePopupByEsc(evt) {
+    const popupOpened = document.querySelector('.popup_opened')
+    if (evt.key === 'Escape') {
+      if (popupOpened) {
+        popupClosed(popupOpened)
+      }
+    }
+  }
+
+function closePopupByOverlay() {
+  const popupField = Array.from(document.querySelectorAll('.popup'));
+  popupField.forEach((popupElement) => {
+    popupElement.addEventListener('mousedown', evt => {
+      if(evt.target !== evt.currentTarget) {
+        return
+      }
+      popupClosed(popupElement)
+    });
+  });
+}
+closePopupByOverlay()
+
 function popupOpened(popup) {
     popup.classList.add('popup_opened');
+    
+    if (popup.classList.contains('popup_opened')) {
+        enableValidation(config);
+    } else {
+        const popupForm = document.querySelector('.popup__content');
+        popupForm.reset();
+        resetErrorForm(popup, config);
+    }
+    document.addEventListener('keydown', ClosePopupByEsc);
 }
 
 function popupClosed(popup) {
     popup.classList.remove('popup_opened');
+    document.addEventListener('keydown', ClosePopupByEsc);
 }
+
 
 function saveProfileInfo() {
     inputName.value = profileName.textContent;

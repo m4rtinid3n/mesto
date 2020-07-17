@@ -37,13 +37,15 @@
   <section class="popup popup_profile">
     <div class="popup__container">
       <button class="popup__close" type="button"></button>
-      <form name="popup-form" class="popup__content popup-profiles">
+      <form name="popup-form" class="popup__content popup-profiles" action="post" novalidate="">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <div class="popup__fields">
-          <input name="name" class="popup__input popup__input_type_name" type="text"  placeholder="Введите имя">
-          <input name="job" class="popup__input popup__input_type_job" type="text"  placeholder="Введите профессию">
+        <label class="popup__fields">
+          <input name="name" class="popup__input popup__input_type_name" type="text" placeholder="Введите имя" id="name-input" required="" maxlength="40" minlength="2">
+          <span class="popup__input-error" id="name-input-error"></span>
+          <input name="job" class="popup__input popup__input_type_job" type="text"  placeholder="Введите профессию" id="job-input" required="" maxlength="200" minlength="2">
+          <span class="popup__input-error" id="job-input-error"></span>
           <button type="submit" class="button popup__save">Сохранить</button>
-        </div>
+        </label>
       </form>
       </div>
   </section>
@@ -51,11 +53,15 @@
   <section class="popup popup_element">
     <div class="popup__container">
       <button class="popup__close popup__close_elements" type="button"></button>
-      <h2 class="popup__title">Новое место</h2>
-      <form name="popup-form" class="popup__content popup-elements">
-        <input name="name" class="popup__input popup__input_type_name-element" type="text" placeholder="Введите название">
-        <input name="job" class="popup__input popup__input_type_src" type="text"  placeholder="Вставьте ссылку">
-        <button type="submit" class="button popup__save popup__save_elements">Сохранить</button>
+      <form name="popup-form" class="popup__content popup-elements" action="post" novalidate="">
+        <h2 class="popup__title">Новое место</h2>
+        <label class="popup__fields">
+          <input name="place" class="popup__input popup__input_type_name-element" type="text" placeholder="Введите название" id="place-input" required="" maxlength="30" minlength="2">
+          <span class="popup__input-error" id="place-input-error"></span>
+          <input name="link" class="popup__input popup__input_type_src" type="url"  placeholder="Вставьте ссылку" id="link-input" required="">
+          <span class="popup__input-error" id="link-input-error"></span>
+          <button type="submit" class="button popup__save popup__save_elements">Сохранить</button>
+        </label>  
       </form>
     </div>
   </section>
@@ -79,6 +85,7 @@
     </div>
   </template>
 
+  <script type="text/javascript" src='./scripts/validate.js'></script>
   <script type="text/javascript" src='./scripts/utils.js'></script>
   <script type="text/javascript" src='./scripts/index.js'></script>
 </body>
