@@ -4,10 +4,8 @@ const buttonOpenElements = document.querySelector('.profile__add-button');
 const buttonCloseElements = document.querySelector('.popup__close_elements');
 const buttonOpenPopupImage = document.querySelector('.popup__image');
 const buttonClosePopupImage = document.querySelector('.popup__close_image');
-const buttonLike = document.querySelector('.element__heart');
 const popupProfile = document.querySelector('.popup_profile');
 const popupElement = document.querySelector('.popup_element');
-const Cardtitle = document.querySelector('.element__title');
 const popupImage = document.querySelector('.popup_image');
 const popupDescription = document.querySelector('.popup__description');
 const inputName = popupProfile.querySelector('.popup__input_type_name');
@@ -28,7 +26,7 @@ const config = {
     inactiveButtonClass: 'popup__save_disabled',
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__input-error_visible'
-}
+};
 
 function getCardElement(item) {
     const card = cardsTemplate.content.cloneNode(true);
@@ -115,14 +113,6 @@ function popupOpened(popup) {
 
 function popupClosed(popup) {
     popup.classList.remove('popup_opened');
-    document.addEventListener('keydown', ClosePopupByEsc);
-}
-
-
-function saveProfileInfo() {
-    inputName.value = profileName.textContent;
-    inputJob.value = profileJob.textContent;
-    popupClosed(popupProfile);
 }
 
 function formSubmitHandler (evt) {
