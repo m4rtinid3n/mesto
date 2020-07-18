@@ -137,7 +137,13 @@ function formSubmitCards (evt) {
     popupClosed(popupElement);
 }
 
+function saveProfileInfo() { 
+    inputName.value = profileName.textContent; 
+    inputJob.value = profileJob.textContent; 
+    popupClosed(popupProfile); 
+} 
 
+buttonOpenProfile.addEventListener('click', saveProfileInfo);
 buttonOpenProfile.addEventListener('click', () => popupOpened(popupProfile));
 buttonCloseProfile.addEventListener('click', () => popupClosed(popupProfile));
 buttonOpenElements.addEventListener('click', () => popupOpened(popupElement));
