@@ -77,10 +77,10 @@ function openPopupCards(evt) {
 }
 
 function ClosePopupByEsc(evt) {
-    const popupOpened = document.querySelector('.popup_opened')
+    const popupOpened = document.querySelector('.popup_opened');
     if (evt.key === 'Escape') {
       if (popupOpened) {
-        popupClosed(popupOpened)
+        popupClosed(popupOpened);
       }
     }
   }
@@ -90,13 +90,13 @@ function closePopupByOverlay() {
   popupField.forEach((popupElement) => {
     popupElement.addEventListener('mousedown', evt => {
       if(evt.target !== evt.currentTarget) {
-        return
+        return;
       }
       popupClosed(popupElement)
     });
   });
 }
-closePopupByOverlay()
+closePopupByOverlay();
 
 function popupOpened(popup) {
     popup.classList.add('popup_opened');
@@ -113,6 +113,7 @@ function popupOpened(popup) {
 
 function popupClosed(popup) {
     popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', ClosePopupByEsc);
 }
 
 function formSubmitHandler (evt) {
@@ -129,11 +130,11 @@ function formSubmitCards (evt) {
     const cardItem = {
         name,
         link,
-    }
+    };
     const card = getCardElement(cardItem);
     nameElement.value = '';
     linkElement.value = '';
-    renderCard(card, cardsList)
+    renderCard(card, cardsList);
     popupClosed(popupElement);
 }
 
