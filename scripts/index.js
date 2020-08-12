@@ -1,3 +1,7 @@
+import Card from "./Card.js";
+import {cardFormValidator, profileFormValidator} from "./FormValidator.js";
+import {config, initialCards, openPopup, closePopup,} from "./utils.js";
+
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
 const buttonOpenProfile = document.querySelector('.profile__button');
@@ -15,10 +19,6 @@ const formElements = popupElement.querySelector('.popup-elements');
 const nameElement = popupElement.querySelector('.popup__input_type_name-element');
 const linkElement = popupElement.querySelector('.popup__input_type_src');
 const cardsList = document.querySelector('.elements');
-
-import Card from "./Card.js";
-import {cardFormValidator, profileFormValidator} from "./FormValidator.js";
-import {config, initialCards, openPopup, closePopup,} from "./utils.js";
 
 function renderCard(card, container) {
   container.prepend(card);

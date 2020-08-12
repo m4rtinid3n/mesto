@@ -6,27 +6,27 @@ export class FormValidator {
     this._formElement = formElement;
   }
 
-  _showInputError(inputElement, errorMessage) {
+  _showInputError(config, inputElement, errorMessage) { 
+    const errorElement = inputElement.closest(this._config.popupFieldSelector).querySelector(this._config.errorSelector); 
+ 
+    inputElement.classList.add(config.inputErrorClass); 
+    errorElement.classList.add(config.errorClass); 
+    errorElement.textContent = errorMessage; 
+  } 
+
+  _hideInputError(config, inputElement) {
     const errorElement = inputElement.closest(this._config.popupFieldSelector).querySelector(this._config.errorSelector);
 
-    inputElement.classList.add('popup__input-error');
-    errorElement.classList.add('popup__input-error_visible');
-    errorElement.textContent = errorMessage;
-  }
-
-  _hideInputError(inputElement) {
-    const errorElement = inputElement.closest(this._config.popupFieldSelector).querySelector(this._config.errorSelector);
-
-    inputElement.classList.remove('popup__input-error');
-    errorElement.classList.remove('popup__input-error_visible');
+    inputElement.classList.remove(config.inputErrorClass);
+    errorElement.classList.remove(config.errorClass);
     errorElement.textContent = '';
   }
 
-  _isValid(inputElement) {
+  _isValid(config, inputElement) {
     if (!inputElement.validity.valid) {
-      this._showInputError(inputElement, inputElement.validationMessage)
+      this._showInputError(config, inputElement, inputElement.validationMessage)
     } else {
-      this._hideInputError(inputElement)
+      this._hideInputError(config, inputElement)
     }
   }
 
@@ -60,7 +60,7 @@ export class FormValidator {
 
     inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
-        this._isValid(inputElement);
+        this._isValid(config, inputElement);
         this._toggleButtonState(inputList, buttonElement);
       });
     });
@@ -78,7 +78,7 @@ export class FormValidator {
     const buttonElement = this._formElement.querySelector(config.submitButtonSelector);
 
     inputList.forEach((inputElement) => {
-      this._hideInputError(inputElement);
+      this._hideInputError(config, inputElement);
       this._toggleButtonState(inputList, buttonElement);
     });
   }
