@@ -61,7 +61,7 @@ export const userInfo = new UserInfo(profileNameSelector, profileJobSelector);
 const popupFormAddCard = new PopupWithForm({
   popupSelector: popupAddCardSelector,
   handleFormSubmit: (item) => {
-    const cardElement = createCard({ name: item.place, link: item.url }).generateCard();
+    const cardElement = createCard({ name: item.name, link: item.link }).generateCard();
     initialArray.addItem(cardElement);
   }
 });
