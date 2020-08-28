@@ -1,32 +1,32 @@
-import {config} from "./utils.js";
+import { config } from "../utils/constants.js";
 
-export class FormValidator {
+export default class FormValidator {
   constructor(config, formElement) {
     this._config = config;
     this._formElement = formElement;
   }
 
-  _showInputError(config, inputElement, errorMessage) { 
-    const errorElement = inputElement.closest(this._config.popupFieldSelector).querySelector(this._config.errorSelector); 
- 
-    inputElement.classList.add(config.inputErrorClass); 
-    errorElement.classList.add(config.errorClass); 
-    errorElement.textContent = errorMessage; 
-  } 
-
-  _hideInputError(config, inputElement) {
+  _showInputError(inputElement, errorMessage, inputErrorClass, inputVisibleClass) {
     const errorElement = inputElement.closest(this._config.popupFieldSelector).querySelector(this._config.errorSelector);
 
-    inputElement.classList.remove(config.inputErrorClass);
-    errorElement.classList.remove(config.errorClass);
+    inputElement.classList.add(inputErrorClass);
+    errorElement.classList.add(inputVisibleClass);
+    errorElement.textContent = errorMessage;
+  }
+  
+  _hideInputError(inputElement, inputErrorClass, inputVisibleClass) {
+    const errorElement = inputElement.closest(this._config.popupFieldSelector).querySelector(this._config.errorSelector);
+
+    inputElement.classList.remove(inputErrorClass);
+    errorElement.classList.remove(inputVisibleClass);
     errorElement.textContent = '';
   }
 
-  _isValid(config, inputElement) {
+  _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
-      this._showInputError(config, inputElement, inputElement.validationMessage)
+      this._showInputError(inputElement, inputElement.validationMessage, this._config.inputErrorClass, this._config.inputErrorVisibleClass)
     } else {
-      this._hideInputError(config, inputElement)
+      this._hideInputError(inputElement, this._config.inputErrorClass, this._config.inputErrorVisibleClass)
     }
   }
 
@@ -36,21 +36,21 @@ export class FormValidator {
     });
   }
 
-  _onDisabledSubmit(buttonElement) {
-    buttonElement.classList.add('popup__save_disabled');
+  _onDisabledSubmit(buttonElement, buttonDisabledClass) {
+    buttonElement.classList.add(buttonDisabledClass);
     buttonElement.setAttribute('disabled', true);
   }
 
-  _offDisabledSubmit(buttonElement) {
-    buttonElement.classList.remove('popup__save_disabled');
+  _offDisabledSubmit(buttonElement, buttonDisabledClass) {
+    buttonElement.classList.remove(buttonDisabledClass);
     buttonElement.removeAttribute('disabled');
   }
 
   _toggleButtonState(inputList, buttonElement) {
     if (this._hasInvalidInput(inputList)) {
-      this._onDisabledSubmit(buttonElement);
+      this._onDisabledSubmit(buttonElement, config.inactiveButtonClass);
     } else {
-      this._offDisabledSubmit(buttonElement);
+      this._offDisabledSubmit(buttonElement, config.inactiveButtonClass);
     }
   };
 
@@ -60,7 +60,7 @@ export class FormValidator {
 
     inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
-        this._isValid(config, inputElement);
+        this._checkInputValidity(inputElement);
         this._toggleButtonState(inputList, buttonElement);
       });
     });
@@ -78,18 +78,9 @@ export class FormValidator {
     const buttonElement = this._formElement.querySelector(config.submitButtonSelector);
 
     inputList.forEach((inputElement) => {
-      this._hideInputError(config, inputElement);
+      this._hideInputError(inputElement, this._config.inputErrorClass, this._config.inputErrorVisibleClass);
       this._toggleButtonState(inputList, buttonElement);
     });
   }
 }
 
-
-const formProfile = document.querySelector('.popup-profiles');
-const formCard = document.querySelector('.popup-elements');
-
-export const profileFormValidator = new FormValidator(config, formProfile);
-profileFormValidator.enableValidation(config);
-
-export const cardFormValidator = new FormValidator(config, formCard);
-cardFormValidator.enableValidation(config);

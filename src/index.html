@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
   <title>Mesto</title>
 </head>
 <body>
@@ -26,7 +25,9 @@
       </section>  
     
       <section class="elements">
-             
+        <div class="element">
+      
+        </div>
       </section>
     </main>  
     
@@ -57,11 +58,11 @@
       <form name="popup-form" class="popup__content popup-elements" action="post" novalidate="">
         <h2 class="popup__title">Новое место</h2>
         <label class="popup__fields">
-          <input name="place" class="popup__input popup__input_type_name-element" type="text" placeholder="Введите название" id="place-input" required="" maxlength="30" minlength="2">
+          <input name="name" class="popup__input popup__input_type_name-element" type="text" placeholder="Введите название" id="place-input" required="" maxlength="30" minlength="2">
           <span class="popup__input-error" id="place-input-error"></span>
           <input name="link" class="popup__input popup__input_type_src" type="url"  placeholder="Вставьте ссылку" id="link-input" required="">
           <span class="popup__input-error" id="link-input-error"></span>
-          <button type="submit" class="button popup__save popup__save_elements">Сохранить</button>
+          <button type="submit" class="button popup__save popup__save_disabled">Сохранить</button>
         </label>  
       </form>
     </div>
@@ -69,14 +70,15 @@
 
   <section class="popup popup_image">
     <section class="popup__image-container">
-      <img class="popup__image popup__image_opened" alt="выбранная картинка" src="#">
+      <img class="popup__image popup__image_opened" alt="" src="#">
       <p class="popup__description"></p>
-      <button class="popup__close_image" type="button"></button>
+      <button class="popup__close" type="button"></button>
     </section> 
   </section>
+  
 
   <template class="template-elements">
-    <div class="element">
+    <div class="element__items">
       <img class="element__image" alt="картинки из разных мест" src="#">
       <div class="element__description">
         <p class="element__title"></p>
@@ -85,8 +87,6 @@
       <button class="element__button element__delete_button" type="button"><img class="element__delete" src="./images/Delete_button.svg" alt="кнопка удаления картинки"></button>
     </div>
   </template>
-
-<script type="module" src="./scripts/index.js"></script>
   
 </body>
 </html>

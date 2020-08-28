@@ -4,12 +4,15 @@
 @import url(./__button/element__button.css);
 @import url(./__heart/element__heart.css);
 @import url(./__delete/element__delete.css);
+@import url(./__items/element__items.css);
 
 .element {
-    max-width: 282px;
-    margin: 0 auto;
-    border-radius: 10px;
-    background-color: white;
-    overflow: hidden;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 282px);
+    grid-auto-rows: 361px;
+    gap: 21px 18px;
+    justify-content: center;
+    font-family: 'Inter', Arial, sans-serif;
+    padding: 0;
+    list-style: none;
 }
