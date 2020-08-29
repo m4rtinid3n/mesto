@@ -5,8 +5,8 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     padding: 45px 199px 60px 199px;
-    box-sizing: content-box;
-    min-width: 300px;
+    box-sizing: border-box;
+    min-height: 100vh;
 }
 
 @media only screen and (max-width: 1280px) {

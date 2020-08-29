@@ -34,13 +34,13 @@ const cardFormValidator = new FormValidator(config, formCard);
 cardFormValidator.enableValidation(config);
 
 const popupWithImg = new PopupWithImage(popupImgSelector);
+popupWithImg.setEventListeners();
 
 function createCard(item) {
   return new Card({
     data: item,
     handleCardClick: (item) => {
       popupWithImg.open(item);
-      popupWithImg.setEventListeners();
     }
   }, templateElementSelector)
 }

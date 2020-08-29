@@ -1,15 +1,15 @@
 @import url(./__container/popup__container.css);
 @import url(./__close/popup__close.css);
 @import url(./__title/popup__title.css);
-@import url(./__input/popu__input.css);
+@import url(./__input/popup__input.css);
 @import url(./__save/popup__save.css);
 @import url(./__image/popup__image.css);
 @import url(./__description/popup__description.css);
 @import url(./__close/_image/popup__close_image.css);
 @import url(./__image-container/popup__image-container.css);
+@import url(./__input-error/popup__input-error.css);
+@import url(./__input-error/_visiable/popup__input-error_visible.css);
 @import url(./__input/_type_error/popup__input_type_error.css);
-@import url(./_input-error/popup__input-error.css);
-
 
 .popup {
   position: fixed;

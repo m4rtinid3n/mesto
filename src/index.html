@@ -58,10 +58,10 @@
       <form name="popup-form" class="popup__content popup-elements" action="post" novalidate="">
         <h2 class="popup__title">Новое место</h2>
         <label class="popup__fields">
-          <input name="name" class="popup__input popup__input_type_name-element" type="text" placeholder="Введите название" id="place-input" required="" maxlength="30" minlength="2">
-          <span class="popup__input-error" id="place-input-error"></span>
-          <input name="link" class="popup__input popup__input_type_src" type="url"  placeholder="Вставьте ссылку" id="link-input" required="">
-          <span class="popup__input-error" id="link-input-error"></span>
+          <input name="name" class="popup__input popup__input_type_name-element" type="text" placeholder="Введите название" id="place-input" required maxlength="30" minlength="2">
+          <span class="popup__input-error"></span>
+          <input name="link" class="popup__input popup__input_type_src" type="url"  placeholder="Вставьте ссылку" id="link-input" required>
+          <span class="popup__input-error"></span>
           <button type="submit" class="button popup__save popup__save_disabled">Сохранить</button>
         </label>  
       </form>

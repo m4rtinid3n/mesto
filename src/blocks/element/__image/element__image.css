@@ -4,4 +4,7 @@
     margin: 0px;
     padding: 0px;
     object-fit: cover;
+    cursor: pointer;
+    width: 100%;
+    display: block;
 }

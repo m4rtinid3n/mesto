@@ -29,7 +29,7 @@ export const config = {
   formSelector: '.popup__content',
   popupFieldSelector: '.popup__fields',
   inputSelector: '.popup__input',
-  errorSelector: '.popup__input',
+  errorSelector: '.popup__input-error',
   submitButtonSelector: '.popup__save',
   inactiveButtonClass: 'popup__save_disabled',
   inputErrorVisibleClass: 'popup__input-error_visible',
