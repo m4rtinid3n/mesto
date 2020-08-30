@@ -7,9 +7,11 @@
 @import url(./__description/popup__description.css);
 @import url(./__close/_image/popup__close_image.css);
 @import url(./__image-container/popup__image-container.css);
-@import url(./__input-error/popup__input-error.css);
-@import url(./__input-error/_visiable/popup__input-error_visible.css);
+@import url(./__error/popup__error.css);
+@import url(./__error/_visiable/popup__error_visible.css);
 @import url(./__input/_type_error/popup__input_type_error.css);
+@import url(./__field/popup__field.css);
+@import url(./__fields/popup__fields.css);
 
 .popup {
   position: fixed;

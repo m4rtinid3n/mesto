@@ -27,12 +27,12 @@ export const initialCards = [
 
 export const config = {
   formSelector: '.popup__content',
-  popupFieldSelector: '.popup__fields',
+  popupFieldSelector: '.popup__field',
   inputSelector: '.popup__input',
-  errorSelector: '.popup__input-error',
+  errorSelector: '.popup__error',
   submitButtonSelector: '.popup__save',
   inactiveButtonClass: 'popup__save_disabled',
-  inputErrorVisibleClass: 'popup__input-error_visible',
+  inputErrorVisibleClass: 'popup__error_visible',
   inputErrorClass: 'popup__input_type_error',
 };
 
