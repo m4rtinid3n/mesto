@@ -1,24 +1,22 @@
-@import url(./__name/profile__name.css);
-@import url(./__avatar/profile__avatar.css);
-@import url(./__button/profile__button.css);
-@import url(./__add-button/profile__add-button.css);
-@import url(./__info/profile__info.css);
-@import url(./__job/profile__job.css);
-@import url(./__name-button/profile__name-button.css);
+@import url(__info/profile__info.css);
+@import url(__avatar/profile__avatar.css);
+@import url(__container/profile__container.css);
+@import url(__name/profile__name.css);
+@import url(__job/profile__job.css);
+@import url(__wrap/profile__wrap.css);
 
 .profile {
-    display: flex;
-    align-items: center;
-    max-width: 882px;
-    margin: 0 auto;
-    padding-top: 36px;
-    padding-bottom: 51px;
-    flex-wrap: wrap;
+  font-family: 'Inter', Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-@media only screen and (max-width: 580px) {
-    .profile {
-    padding-left: 19px;
-    padding-right: 19px;
-    }
+@media screen and (max-width: 768px){
+  .profile {
+    flex-direction: column;
   }
+}
+

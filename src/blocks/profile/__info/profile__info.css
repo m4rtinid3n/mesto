@@ -1,15 +1,16 @@
 .profile__info {
-    margin-top: 18px;
-    max-width: 336px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-
-@media only screen and (max-width: 654px) {
-    .profile__info {
-      margin: 0 auto;
-    }
+@media screen and (max-width: 768px) {
+  .profile__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 33px;
   }
+}

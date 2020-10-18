@@ -1,22 +1,20 @@
 .profile__name {
-font-family: 'Inter', ‘Arial’, sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 42px;
-line-height: 56px;
-color: #FFFFFF;
-margin: 0;
-margin-right: 17px;
-text-overflow: ellipsis;
-overflow: hidden;
-white-space: nowrap;
-max-width: 336px;
+  grid-area: name;
+  margin: 0;
+  max-width: 295px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.625rem;
+  line-height: 1.33;
+  color: #FFFFFF;
+  align-self: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-@media only screen and (max-width: 580px) {
-    .profile__name {
-        font-size: 27px;
-        margin-right: 10px;
-        max-width: 250px;
-    }
+@media screen and (max-width: 480px) {
+  .profile__name {
+    font-size: 1.6875rem;
   }
+}

@@ -1,13 +1,9 @@
-@import url(./__logo/header__logo.css);
+@import url(__logo/header__logo.css);
 
 .header {
-    max-width: 882px;
-    margin: 0 auto;
-    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  font-family: 'Inter', Arial, sans-serif;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  /* добрый вечер! я прошу прощения, я где-то в git допустил ошибку и у меня не запушились изменения в предыдущей итерации. */
+  box-sizing: border-box;
 }
 
-@media only screen and (max-width: 580px) {
-    .header {
-        padding-left: 27px;
-        }
-  }

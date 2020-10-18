@@ -1,15 +1,3 @@
 .header__logo {
-    background-image: url(../../../images/Vector.svg);
-    width: 142px;
-    height: 33px;
-    margin-bottom: 40.6px;
-    background-size: cover;
-}
-
-
-@media only screen and (max-width: 580px) {
-    .header__logo {
-        width: 103px;
-        height: 24px;
-  }
+ 
 }

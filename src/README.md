@@ -11,7 +11,7 @@
 
 
 * [Ссылка на Github](https://m4rtinid3n.github.io/mesto/index.html)
-
-
+  [Deployment steps](#steps-to-deployment)
+#steps-to-deployment
 
 
