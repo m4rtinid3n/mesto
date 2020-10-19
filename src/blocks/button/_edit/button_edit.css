@@ -1,11 +1,11 @@
 .button_edit {
-  grid-area: button;
   width: 24px;
   height: 24px;
-  border: 1px solid #fff;
   background-image: url(../../../images/button__edit.svg);
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  grid-area: button;
+  border: 1px solid #fff;
 }
 
 @media screen and (max-width: 320px) {

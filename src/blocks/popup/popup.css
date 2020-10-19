@@ -8,7 +8,7 @@
 @import url(__input/_type/popup__input_type_error.css);
 @import url(__close/popup__close.css);
 @import url(__img/popup__img.css);
-@import url(__caption/popup__caption.css);
+@import url(__description/popup__description.css);
 @import url(__error/popup__error.css);
 @import url(__error/_visible/popup__error_visible.css);
 
@@ -20,11 +20,11 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, .5);
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility .8s, opacity linear 0.5s;
   display: flex;
   align-items: center;
   justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .8s, opacity linear 0.5s;
 }
 

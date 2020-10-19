@@ -26,8 +26,8 @@ import {
 import { togglePreloader } from "../utils/preloader.js";
 import { loaderForSubmit } from "../utils/loaderForSubmit.js";
 
- const btnEditProfile = document.querySelector('.button_edit');
- const btnAddCard = document.querySelector('.button_add');
+ const buttonEditProfile = document.querySelector('.button_edit');
+ const buttonAddCard = document.querySelector('.button_add');
  const formProfile = document.querySelector('.popup__content_theme_profile');
  const formCard = document.querySelector('.popup__content_theme_elements');
  const formAvatar = document.querySelector('.popup__content_theme_avatar');
@@ -51,14 +51,11 @@ popupWithImg.setEventListeners();
 const popupDeleteCard = new PopupDeleteCard(popupDeleteCardSelector);
 popupDeleteCard.setEventListeners();
 
-//при открытие popup profile устанавливаем первоначальные значения инпутам
 export function setValueInputPopupProfile(data) {
   nameInput.value = data.name;
   jobInput.value = data.job;
 }
 
-
-//создаем экземпляр класса API
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-16',
   headers: {
@@ -203,13 +200,13 @@ api.getAppInfo()
     popupChangeAvatar,
   } = res;
 
-  btnAddCard.addEventListener('click', () => {
+  buttonAddCard.addEventListener('click', () => {
     popupFormAddCard.open();
     cardFormValidator.resetErrorElement();
   });
 
 
-  btnEditProfile.addEventListener('click', () => {
+  buttonEditProfile.addEventListener('click', () => {
     popupEditProfile.open();
     profileFormValidator.resetErrorElement();
     setValueInputPopupProfile(userInfo.getUserInfo());

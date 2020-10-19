@@ -1,10 +1,10 @@
 .footer__copy {
+  margin-right: auto;
   font-style: normal;
   font-weight: normal;
   font-size: 1.125rem;
   line-height: 1.22;
   color: #545454;
-  margin-right: auto;
 }
 
 @media screen and (max-width: 480px) {

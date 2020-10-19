@@ -1,10 +1,10 @@
 import {
-  btnSubmitSelector
+  buttonSubmitSelector
 } from './constants';
 
 export const loaderForSubmit = (loading, popupSelector) => {
   const popupOpened = document.querySelector(popupSelector);
-  const btnSubmit = popupOpened.querySelector(btnSubmitSelector);
+  const buttonSubmit = popupOpened.querySelector(buttonSubmitSelector);
 
-    btnSubmit.textContent = loading ? 'Сохранение...' : 'Сохранить';
+    buttonSubmit.textContent = loading ? 'Сохранение...' : 'Сохранить';
 }
